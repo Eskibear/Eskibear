@@ -13,6 +13,8 @@ const createSymlink = async (target, path) => {
     } catch (error) {
         if (error.code === "EPERM") {
             console.error("Linking failed. Should run in elevated mode.");
+        } else {
+            throw error;
         }
     }
 }
