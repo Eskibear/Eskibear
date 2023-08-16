@@ -1,0 +1,23 @@
+{
+  "name": "eskibear",
+  "version": "0.1.0",
+  "description": "Handy tools and scripts for personal use.",
+  "main": "index.js",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Eskibear/Eskibear.git"
+  },
+  "author": "eskibear",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Eskibear/Eskibear/issues"
+  },
+  "homepage": "https://github.com/Eskibear/Eskibear#readme",
+  "dependencies": {
+    "commander": "^11.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+[alias]
+    co=checkout
+    cb=checkout -b
+    ci=commit
+    st=status
+    br=branch
+    logg = log --graph --pretty=format:'%Cred%h %Cgreen%cd%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+[core]
+    autocrlf = false  # don't mess up crlf
+    eol = lf  # use unix style line endings
+    ignorecase = false  # don't ignore case
+    excludesfile = ~/.gitignore  # global gitignore file
+[color]
+    ui = true
+[push]
+    default = simple
+    autoSetupRemote = true
