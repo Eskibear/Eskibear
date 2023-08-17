@@ -13,6 +13,7 @@
     uncommit = reset HEAD^
     unci = reset HEAD^
     logg = log --graph --pretty=format:'%Cred%h %Cgreen%cd%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+    alias = config --get-regexp ^alias.
 [core]
     autocrlf = false  # don't mess up crlf
     eol = lf  # use unix style line endings
@@ -23,3 +24,9 @@
 [push]
     default = simple
     autoSetupRemote = true
+[safe]
+    directory = ~/.eskibear
+[user]
+    name = Yan Zhang
+    email = zy1992@gmail.com
+
