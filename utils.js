@@ -23,7 +23,9 @@ const createSymlink = async (target, symlinkFilePath) => {
     }
 }
 
+const isWindows = process.platform.indexOf("win") === 0;
 module.exports = {
     runCommand,
-    createSymlink
+    createSymlink,
+    isWindows
 }
