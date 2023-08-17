@@ -1,5 +1,5 @@
 const { execSync } = require('child_process');
-const { existsSync, rmSync } = require('fs');
+const { existsSync, unlinkSync } = require('fs');
 const { symlink } = require('fs/promises');
 
 const runCommand = (cmdline) => {
@@ -11,7 +11,7 @@ const createSymlink = async (target, symlinkFilePath) => {
     console.log(`(Linking)> ${symlinkFilePath} -> ${target}`);
     try {
         if (existsSync(symlinkFilePath)) {
-            rmSync(symlinkFilePath);
+            unlinkSync(symlinkFilePath);
         }
         await symlink(target, symlinkFilePath);
     } catch (error) {

@@ -17,15 +17,26 @@ const install = async () => {
         runCommand(`git clone https://github.com/Eskibear/Eskibear ${repoPath}`);
     }
 
-    const dotFiles = [".gitconfig", ".gitingore"];
+    const dotFiles = [".gitconfig", ".gitignore"];
     for (const dotFile of dotFiles) {
         await createSymlink(join(repoPath, dotFile), join(homedir(), dotFile));
     }
 }
 
+const printVersion = () => {
+    const packageJSON = require("./package.json");
+    console.log(packageJSON.version);
+}
+
 program
     .command("install")
+    .alias("i")
     .description("install dot files into home directory")
     .action(install);
+program
+    .command("version")
+    .alias("v")
+    .description("print tool version")
+    .action(printVersion);
 
 program.parse();
