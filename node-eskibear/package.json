@@ -1,6 +1,6 @@
 {
   "name": "eskibear",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Handy tools and scripts for personal use.",
   "main": "index.js",
   "bin": {
