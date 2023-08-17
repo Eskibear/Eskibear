@@ -26,7 +26,6 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: cd node-eskibear
       - run: npm ci
       - run: npm publish
         env:
