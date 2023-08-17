@@ -17,7 +17,7 @@ const install = async () => {
         runCommand(`git clone https://github.com/Eskibear/Eskibear ${repoPath}`);
     }
 
-    const dotFiles = [".gitconfig"];
+    const dotFiles = [".gitconfig", ".gitingore"];
     for (const dotFile of dotFiles) {
         await createSymlink(join(repoPath, dotFile), join(homedir(), dotFile));
     }

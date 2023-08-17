@@ -1,4 +1,5 @@
 const { execSync } = require('child_process');
+const { existsSync, rmSync } = require('fs');
 const { symlink } = require('fs/promises');
 
 const runCommand = (cmdline) => {
@@ -6,10 +7,13 @@ const runCommand = (cmdline) => {
     execSync(cmdline);
 }
 
-const createSymlink = async (target, path) => {
-    console.log(`(Linking)> ${target} -> ${path}`);
+const createSymlink = async (target, symlinkFilePath) => {
+    console.log(`(Linking)> ${symlinkFilePath} -> ${target}`);
     try {
-        await symlink(target, path);
+        if (existsSync(symlinkFilePath)) {
+            rmSync(symlinkFilePath);
+        }
+        await symlink(target, symlinkFilePath);
     } catch (error) {
         if (error.code === "EPERM") {
             console.error("Linking failed. Should run in elevated mode.");
