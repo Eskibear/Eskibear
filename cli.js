@@ -17,9 +17,17 @@ const install = async () => {
         runCommand(`git clone https://github.com/Eskibear/Eskibear ${repoPath}`);
     }
 
+    // link dot files into HOME directory
     const dotFiles = [".gitconfig", ".gitignore"];
     for (const dotFile of dotFiles) {
         await createSymlink(join(repoPath, dotFile), join(homedir(), dotFile));
+    }
+
+    if (isWindows) {
+        console.log("# Run Commands in pwsh:");
+        console.log("PowerShellGet\\Install-Module posh-git -Scope CurrentUser -Force")
+        console.log("Install-Module PSReadLine -Force");
+        console.log("# Copy .ps1 file to $profile")
     }
 }
 
